@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    li{
+        height: 28px;
+        width:300px;
+        background-color: aqua;
+        margin-bottom: 3px;
+    }
+</style>
+<ul class="changeColor">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var uL = document.querySelector(".changeColor");
+    var allLi = document.querySelectorAll("li");
+    uL.addEventListener("click",function (ev) {
+        var ev = ev || window.event;
+        var target = ev.target || ev.srcElement;
+        for(var i=0;i<allLi.length;i++){
+            allLi[i].style.backgroundColor = "aqua";
+        }
+        if(target.nodeName.toLowerCase() === "li"){
+            target.style.backgroundColor = "#333";
+        }
+    },false)
+
+</script>
+</body>
+</html>
